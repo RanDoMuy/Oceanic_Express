@@ -1,0 +1,795 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oceanic Express - To every direction</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="../favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Rubik:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    - preload images
+  -->
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <h1>
+        <a href="#" class="logo">Oceanic Express</a>
+      </h1>
+
+      <nav class="navbar" data-navbar>
+
+        <div class="navbar-top">
+          <a href="#" class="logo">Oceanic Express</a>
+
+          <button class="nav-close-btn" aria-label="Clsoe menu" data-nav-toggler>
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+        </div>
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="#home" class="navbar-link" data-nav-link>
+              <span>Home</span>
+
+              <ion-icon name="chevron-forward"></ion-icon>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#about" class="navbar-link" data-nav-link>
+              <span>About</span>
+
+              <ion-icon name="chevron-forward"></ion-icon>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#service" class="navbar-link" data-nav-link>
+              <span>Service</span>
+
+              <ion-icon name="chevron-forward"></ion-icon>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#track" class="navbar-link" data-nav-link>
+              <span>Track</span>
+
+              <ion-icon name="chevron-forward"></ion-icon>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="signup/" class="navbar-link" data-nav-link>
+              <span>Signup</span>
+
+              <ion-icon name="chevron-forward"></ion-icon>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="login/" class="navbar-link" data-nav-link>
+              <span>Login</span>
+
+              <ion-icon name="chevron-forward"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+  </header>
+
+
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="section hero" aria-label="home" id="home"
+        style="background-image: url('../static/images/hero-banner.jpg')">
+        <div class="container">
+
+          <div class="hero-content">
+
+            <h2 class="h1 hero-title">
+              <span class="span">To Every</span> Direction
+            </h2>
+
+            <p class="hero-text">
+              Get started today and experience the convenience of shipping with Oceanic Express.
+            </p>
+
+            <a href="#track" class="btn-outline">Track Package</a><br>
+            <a href="signup/" class="btn-outline">Join Us</a><br>
+            <a href="login/" class="btn-outline">Login</a>
+
+
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 
+        - #Track
+      -->
+      <div id="track">
+        <text>
+          Thank you for choosing Oceanic Express for your shipping needs!
+          Your package is on its way and we appreciate your business.
+          Please enter your tracking number below to track your package's journey to its final destination.
+        </text>
+
+        <form method="POST">{% csrf_token %}
+          <header>TRACK YOUR PACKAGE</header>
+          <input type="text" placeholder="Enter Package ID" required name="tracking_id">
+          <input id="submit_btn" type="submit" value="Track">
+        </form>
+      </div>
+
+
+
+      <!-- 
+        - #ABOUT
+      -->
+
+      <section class="section about" id="about" aria-label="about">
+        <div class="container">
+
+          <figure class="about-banner img-holder" style="--width: 400; --height: 720;">
+            <img src="../static/images/about-banner.jpg" width="400" height="720" loading="lazy" alt=""
+              class="img-cover">
+
+            <img src="../static/images/about-shape-1.png" width="260" height="170" loading="lazy" alt=""
+              class="abs-img abs-img-1">
+
+            <img src="../static/images/about-shape-2.png" width="500" height="500" loading="lazy" alt=""
+              class="abs-img abs-img-2">
+          </figure>
+
+          <div class="about-content">
+
+            <p class="section-subtitle">Why Choose Us</p>
+
+            <h2 class="h2 section-title">We Are Professional Logistics & cargo Agency</h2>
+
+
+
+            <ul class="about-list">
+
+              <li class="about-item">
+                <div class="about-icon">
+                  <ion-icon name="chevron-forward"></ion-icon>
+                </div>
+
+                <p class="about-text">
+                  Go beyond logistics, make the world go round and revolutionize business.
+                </p>
+              </li>
+
+              <li class="about-item">
+                <div class="about-icon">
+                  <ion-icon name="chevron-forward"></ion-icon>
+                </div>
+
+                <p class="about-text">
+                  Logistics through innovation, dedication, and technology. ready, set, done.
+                </p>
+              </li>
+
+              <li class="about-item">
+                <div class="about-icon">
+                  <ion-icon name="chevron-forward"></ion-icon>
+                </div>
+
+                <p class="about-text">
+                  We take pride in serving our customers safely. together with passion.
+                </p>
+              </li>
+
+              <li class="about-item">
+                <div class="about-icon">
+                  <ion-icon name="chevron-forward"></ion-icon>
+                </div>
+
+                <p class="about-text">
+                  Imagination what we can easily see is only a small percentage.
+                </p>
+              </li>
+
+              <li class="about-item">
+                <div class="about-icon">
+                  <ion-icon name="chevron-forward"></ion-icon>
+                </div>
+
+                <p class="about-text">
+                  Quality never goes out of style. safety, quality, professionalism.
+                </p>
+              </li>
+
+              <li class="about-item">
+                <div class="about-icon">
+                  <ion-icon name="chevron-forward"></ion-icon>
+                </div>
+
+                <p class="about-text">
+                  The quality shows in every move we make where business lives.
+                </p>
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #SERVICE
+      -->
+
+      <section class="section service" id="service" aria-label="service">
+        <div class="container">
+
+          <p class="section-subtitle">All Services</p>
+
+          <h2 class="h2 section-title">Trusted For Our Services</h2>
+
+          <p class="section-text">
+            Looking for a reliable and affordable shipping solution?<br>
+            Look no further than Oceanic Express!
+          </p>
+
+          <ul class="service-list grid-list">
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <img src="../static/images/service-icon-1.png" width="80" height="60" loading="lazy" alt="Truck">
+                </div>
+
+                <h3 class="h3 card-title">
+                  <span class="span">01</span> Air Freight
+                </h3>
+
+                <p class="card-text">
+                  Working with carefully selected carriers, we operate with schedules on all the world's major routes so you can plan with certainty and become more efficient. We offer a range of highly flexible products which allow a choice of delivery speeds to best suit your requirements.
+                </p>
+
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <img src="../static/images/service-icon-2.png" width="74" height="60" loading="lazy" alt="Ship">
+                </div>
+
+                <h3 class="h3 card-title">
+                  <span class="span">02</span> Road Freight
+                </h3>
+
+                <p class="card-text">
+                  Our Road Freight Products offer high quality road transportation, from standard services such as LTL (Less-than-Truck Load), PTL (Part) or FTL (Full-Truck Load) shipments to temperature controlled and highly secured transports.
+                </p>
+
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <img src="../static/images/service-icon-3.png" width="60" height="60" loading="lazy" alt="Airplane">
+                </div>
+
+                <h3 class="h3 card-title">
+                  <span class="span">03</span> Ocean Freight
+                </h3>
+
+                <p class="card-text">
+                  With our broad product range we cover different equipment types and consolidation services to ensure your cargo reaches the right place, at the right time in a cost-efficient way. In order to deliver highest reliability we have planned space protection from every major container port in the world.
+                </p>
+
+
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <img src="../static/images/service-icon-4.png" width="50" height="60" loading="lazy" alt="Train">
+                </div>
+
+                <h3 class="h3 card-title">
+                  <span class="span">04</span> Rail Freight
+                </h3>
+
+                <p class="card-text">
+                  Our Rail Freight products offer secure, reliable and environmentally friendly freight transportation via rail, either throughout Europe or connecting Europe and Asia, West- and Eastbound, LCL (Less-than-Container-Load) or FCL (Full-Container-Load).
+                </p>
+
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <img src="../static/images/service-icon-5.png" width="63" height="60" loading="lazy" alt="Trolley">
+                </div>
+
+                <h3 class="h3 card-title">
+                  <span class="span">05</span> Warehousing
+                </h3>
+
+                <p class="card-text">
+                  We are well positioned to help you expand the availability of your auto parts and components globally. With Oceanic Express Supply Chain Fulfillment® services we can give you 24/7/365 inventory availability as well as flexible and scalable multi-client stocking locations. We are prepared to fully manage your inbound logistics and complete warehouse management processes.
+                </p>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <img src="../static/images/service-icon-6.png" width="46" height="60" loading="lazy" alt="Paper">
+                </div>
+
+                <h3 class="h3 card-title">
+                  <span class="span">06</span> Project Cargo
+                </h3>
+
+                <p class="card-text">
+                  Our aim is to optimize and improve your supply chain so that we can give you the best service.
+                </p>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #FEATURE
+      -->
+
+      <section class="section feature" aria-label="feature">
+        <div class="container">
+
+          <div class="title-wrapper">
+
+            <div>
+              <p class="section-subtitle">Estimation</p>
+
+              <h2 class="h2 section-title">Has a wide range of solutions</h2>
+
+              <p class="section-text">
+                Whether you're shipping a small package or a large shipment, we've got you covered.
+              </p>
+            </div>
+
+          </div>
+
+          <ul class="feature-list grid-list">
+
+            <li>
+              <div class="feature-card" style="--card-number: '01'">
+
+                <div class="card-icon">
+                  <img src="../static/images/feature-icon-1.png" width="72" height="91" alt="">
+                </div>
+
+                <h3 class="h3 card-title">Solutions and specialized</h3>
+
+                <p class="card-text">
+                  Our aim is to optimize and improve your supply chain so that we can give you the best service
+                </p>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="feature-card" style="--card-number: '02'">
+
+                <div class="card-icon">
+                  <img src="../static/images/feature-icon-2.png" width="94" height="94" alt="">
+                </div>
+
+                <h3 class="h3 card-title">Multiple warehouses</h3>
+
+                <p class="card-text">
+                  We provide multiple drop off and pickup locations so you don't have to worry. And you should not face
+                  any kind...
+                </p>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="feature-card" style="--card-number: '03'">
+
+                <div class="card-icon">
+                  <img src="../static/images/feature-icon-3.png" width="93" height="93" alt="">
+                </div>
+
+                <h3 class="h3 card-title">Tracking made easy</h3>
+
+                <p class="card-text">
+                  A tracking number for the entire process. so that you can find the exact position. this process will
+                  help you
+                </p>
+
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #PROJECT
+      -->
+
+      <section class="section project" aria-label="project">
+        <div class="container">
+
+          <p class="section-subtitle">Projects</p>
+
+          <h2 class="h2 section-title">Featured Projects</h2>
+
+          <ul class="project-list">
+
+            <li class="project-item">
+              <div class="project-card">
+
+                <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
+                  <img src="../static/images/project-1.jpg" width="397" height="352" loading="lazy"
+                    alt="Warehouse inventory" class="img-cover">
+                </figure>
+
+                <button class="action-btn" aria-label="View image">
+                  <ion-icon name="expand-outline"></ion-icon>
+                </button>
+
+                <div class="card-content">
+                  <p class="card-tag">Warehousing , Distrbution</p>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Warehouse inventory</a>
+                  </h3>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="project-item">
+              <div class="project-card">
+
+                <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
+                  <img src="../static/images/project-2.jpg" width="397" height="352" loading="lazy"
+                    alt="Warehouse inventory" class="img-cover">
+                </figure>
+
+                <button class="action-btn" aria-label="View image">
+                  <ion-icon name="expand-outline"></ion-icon>
+                </button>
+
+                <div class="card-content">
+                  <p class="card-tag">Logistics, Analytics</p>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Minimize Manufacturing</a>
+                  </h3>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="project-item">
+              <div class="project-card">
+
+                <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
+                  <img src="../static/images/project-3.jpg" width="397" height="352" loading="lazy"
+                    alt="Warehouse inventory" class="img-cover">
+                </figure>
+
+                <button class="action-btn" aria-label="View image">
+                  <ion-icon name="expand-outline"></ion-icon>
+                </button>
+
+                <div class="card-content">
+                  <p class="card-tag">Warehousing , Distrbution</p>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Warehouse inventory</a>
+                  </h3>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="project-item">
+              <div class="project-card">
+
+                <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
+                  <img src="../static/images/project-4.jpg" width="397" height="352" loading="lazy"
+                    alt="Warehouse inventory" class="img-cover">
+                </figure>
+
+                <button class="action-btn" aria-label="View image">
+                  <ion-icon name="expand-outline"></ion-icon>
+                </button>
+
+                <div class="card-content">
+                  <p class="card-tag">Logistics, Analytics</p>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Minimize Manufacturing</a>
+                  </h3>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="project-item">
+              <div class="project-card">
+
+                <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
+                  <img src="../static/images/project-5.jpg" width="397" height="352" loading="lazy"
+                    alt="Warehouse inventory" class="img-cover">
+                </figure>
+
+                <button class="action-btn" aria-label="View image">
+                  <ion-icon name="expand-outline"></ion-icon>
+                </button>
+
+                <div class="card-content">
+                  <p class="card-tag">Warehousing , Distrbution</p>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Warehouse inventory</a>
+                  </h3>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="project-item">
+              <div class="project-card">
+
+                <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
+                  <img src="../static/images/project-6.jpg" width="397" height="352" loading="lazy"
+                    alt="Warehouse inventory" class="img-cover">
+                </figure>
+
+                <button class="action-btn" aria-label="View image">
+                  <ion-icon name="expand-outline"></ion-icon>
+                </button>
+
+                <div class="card-content">
+                  <p class="card-tag">Logistics, Analytics</p>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Minimize Manufacturing</a>
+                  </h3>
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+      <!-- 
+        - #NEWSLETTER
+      -->
+
+      <section class="section newsletter" aria-label="newsletter">
+        <div class="container">
+
+          <figure class="newsletter-banner img-holder">
+            <img src="../static/images/newsletter-banner.png" width="303" height="381" alt="newsletter banner"
+              class="w-100">
+          </figure>
+
+          <div class="newsletter-content">
+
+            <h2 class="h2 section-title">Oceanic Express</h2>
+
+          </div>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-top section">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">Oceanic Express</a>
+
+          <p class="footer-text">
+            we pride ourselves on providing customized shipping solutions tailored to your specific needs. Join us to learn more about our services and how we can help you with your shipping needs
+          </p>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Quick Links</p>
+          </li>
+
+          <li>
+            <a href="#about" class="footer-link">About</a>
+          </li>
+
+          <li>
+            <a href="#service" class="footer-link">Services</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <a href="#track" class="footer-link">Track Your Shipment</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Privacy Policy</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Terms & Condition</a>
+          </li>
+
+        </ul>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">
+          &copy; Copyright © 2005-2023  Oceanic Supply Chain Express Co., Ltd. | All Rights Reserved
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+
+
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn" aria-label="Back to top" data-back-top-btn>
+    <ion-icon name="chevron-up"></ion-icon>
+  </a>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

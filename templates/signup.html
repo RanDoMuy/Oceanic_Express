@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'css/login.css' %}">
+	<title>Oceanic Express - Sign up</title>
+</head>
+<body>
+	<div id="title">
+		<h1>Oceanic Express</h1>
+		<text>Get started today and experience the convenience of shipping with Oceanic Express</text>
+	</div>
+	
+	<div id="container">
+		<h2>Sign up</h2>
+		<hr>
+		<form method="POST">{% csrf_token %}
+            <input type="text" placeholder="Fullname" name="fullname"/>
+			<input type="tel" placeholder="Phone Number" name="number"/>
+			<input type="email" placeholder="Email Address" name="email"/>
+            <input type="password" placeholder="Password" name="password"/>
+			<input type="password" placeholder="Confirm Password"/>
+			<input id="submit" type="submit" value="Sign up"/>
+        </form>
+	</div>
+</body>
+</html>

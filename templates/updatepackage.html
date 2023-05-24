@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/addpackage.css' %}">
+    <title>Update Package</title>
+</head>
+<body>
+    <div id="navbar">
+        <a href="{% url 'admin_dashboard' %}">Dashboard</a>
+        <a href="{% url 'add_package' %}">Add Package</a>  
+        <a  href="{% url 'logout' %}">Logout</a>
+    </div>
+
+    <form method="POST">{% csrf_token %}         
+        <div id="cards">
+            <div class="card">
+                <header>Package Information</header>
+                <input type="text" placeholder="{{packageinfo.Package_Description}}" disabled/>
+                <input type="number" placeholder="Quantity: {{packageinfo.Quantity}}" name="quantity"/>
+                <input type="text" placeholder=" Weight: {{packageinfo.Weight}}" name="weight"/>
+                <select name="condition">
+                    <option>Package Condition</option>
+                    <option>Good</option>
+                    <option>Damaged</option>
+                </select>
+            </div>
+
+            <div class="card">
+                <header>Shipping Information</header>
+                <select name="status">
+                    <option>Shipment Status</option>
+                    <option>In Transit</option>
+                    <option>On hold</option>
+                    <option>Delivered</option>
+                </select>
+
+                <select name="shipment_plan">
+                    <option>Shipment Plan</option>
+                    <option>CArgo</option>
+                    <option>Pooor</option>
+                    <option>Premium</option>
+                </select>
+
+                <input type="text" placeholder="{{packageinfo.Tracking_Id}}" disabled>
+                <input type="text" placeholder="Current Location: {{packageinfo.Current_Location}}" name="current_location"/>
+            </div>
+
+            <div class="card">
+                <header>Origin</header>
+                <input type="text" placeholder="{{packageinfo.Sender_FullName}}" disabled/>
+                <input type="email" placeholder="{{packageinfo.Sender_Email}}" disabled>
+                <input type="tel" placeholder="{{packageinfo.Sender_Contact}}" disabled>
+                <input type="text" placeholder="{{packageinfo.Sender_Address}}" disabled>
+                <input type="text" placeholder="{{packageinfo.Dispatch_Date}}" onfocus="(this.type='date')" onblur="(this.type='text')" disabled/>
+            </div>
+
+            <div class="card">
+                <header>Destination</header>
+                <input type="text" placeholder="{{packageinfo.Receiver_FullName}}" disabled/>
+                <input type="email" placeholder="{{packageinfo.Receiver_Email}}" disabled/>
+                <input type="tel" placeholder="{{packageinfo.Receiver_Contact}}" disabled/>
+                <input type="text" placeholder="{{packageinfo.Receiver_Address}}" disabled/>
+                <input type="text" placeholder="Expected Delivery Date: {{packageinfo.Expected_Delivery_Date}}" onfocus="(this.type='date')" onblur="(this.type='text')" name="delivery_date"/>
+            </div>
+        </div>
+
+        <input id="submit_btn" type="submit">
+    </form>
+</body>
+</html>

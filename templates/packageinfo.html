@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Package Info</title>
+	<link rel="stylesheet" href="{% static 'css/packageinfo.css' %}">
+</head>
+<body>
+    <div id="head">
+        <label>Package ID:{{packageinfo.Tracking_Id}}</label>
+    </div>
+
+	<div id="cards">
+		<div class="card">
+			<header class="header">Package Details</header>
+			<label class="label">Description:&nbsp;&nbsp; {{packageinfo.Package_Description}}</label>
+			<label class="label">Quantity:&nbsp;&nbsp; {{packageinfo.Quantity}}</label>
+			<label class="label">Weight:&nbsp;&nbsp; {{packageinfo.Weight}}kg</label>
+			<label class="label">Condition:&nbsp;&nbsp; {{packageinfo.Package_Condition}}</label>
+			<!--<label id="img"></label>-->
+		</div>
+
+		<div class="card">
+			<header class="header">Shipment Details</header>
+			<label class="label">Dispatch Location:&nbsp;&nbsp; {{packageinfo.Dispatch_Location}}</label>
+			<label class="label">Dispatch Date:&nbsp;&nbsp; {{packageinfo.Dispatch_Date}}</label>
+			<label class="label">Current Location:&nbsp;&nbsp; {{packageinfo.Current_Location}}</label>
+			<label class="label">Shipment Status:&nbsp;&nbsp; {{packageinfo.Shipment_Status}}</label>
+			<label class="label">Shipment Destination:&nbsp;&nbsp; {{packageinfo.Shipment_Destination}}</label>
+			<label class="label">Expected Delivery Date:&nbsp;&nbsp; {{packageinfo.Expected_Delivery_Date}}</label>
+		</div>
+
+		<div class="card">
+			<header class="header">Sender Details</header>
+			<label class="label">Name:&nbsp;&nbsp; {{packageinfo.Sender_FullName}}</label>
+			<label class="label">Contact:&nbsp;&nbsp; {{packageinfo.Sender_Contact}}</label>
+			<label class="label">Email:&nbsp;&nbsp; {{packageinfo.Sender_Email}}</label>
+			<label class="label">Location:&nbsp;&nbsp; {{packageinfo.Sender_Address}}</label>
+			
+		</div>
+
+
+		<div class="card">
+			<header class="header">Receiver Details</header>
+			<label class="label">Name:&nbsp;&nbsp; {{packageinfo.Receiver_FullName}}</label>
+			<label class="label">Number:&nbsp;&nbsp; {{packageinfo.Receiver_Contact}}</label>
+			<label class="label">Email:&nbsp;&nbsp; {{packageinfo.Receiver_Email}}</label>
+			<label class="label">Location:&nbsp;&nbsp; {{packageinfo.Receiver_Address}}</label>
+		</div>
+	</div>
+</body>
+</html>

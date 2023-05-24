@@ -1,0 +1,106 @@
+body{
+    margin: 0%;
+    font-family: sans-serif;
+    background-color: rgb(192, 192, 192);
+}
+
+#navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: hsl(202, 72%, 15%);
+    color: white;
+}
+
+#navbar a{
+    width: 30%;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    padding: 2%;
+}
+
+#navbar a:hover{
+    background-color: hsl(202, 75%, 47%);
+    color: white;
+}
+
+#navbar a:active{
+    background-color: hsl(202, 75%, 47%);
+    color: white;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin-top: 5%;
+}
+
+#cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 20px;
+    width: 100%;
+}
+
+.card{
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    width: 30%;
+    gap: 20px;
+    border-radius: 8px;
+}
+
+.card header{
+    color: white;
+    background-color: hsl(202, 72%, 15%);
+    padding: 2%;
+    width: 70%;
+    text-align: center;
+    font-size: x-large;
+    
+}
+
+.card input{
+    width: 95%;
+    padding: 2%;
+}
+
+.card select{
+    width: 90%;
+    padding: 2%;
+}
+
+#submit_btn{
+    width: 30%;
+    padding: 2%;
+    background-color: hsl(202, 72%, 15%);
+    color: white;
+    border-style: none;
+    border-radius: 50px;
+}
+
+#submit_btn:active{
+    background-color: hsl(202, 75%, 47%);
+}
+
+@media screen and (max-width:1000px){
+    #cards{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card{
+        width: 90%;
+    }
+
+    #submit_btn{
+        width: 50%;
+    }
+}

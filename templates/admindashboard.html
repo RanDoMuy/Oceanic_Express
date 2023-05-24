@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/admindashboard.css' %}">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <div id="navbar">
+        <a href="{% url 'admin_dashboard' %}">Dashboard</a>
+        <a href="{% url 'add_package' %}">Add Package</a>  
+        <a  href="{% url 'logout' %}">Logout</a>
+    </div>
+
+    <div id="packages">
+        <header>Packages</header>
+        <table>
+            <tr>
+                <th>Package ID</th>
+                <th>Receiver</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+            {% for entry in data %}
+            <tr>
+                <td>{{entry.Tracking_Id}}</td>
+                <td>{{entry.Receiver_FullName}}</td>
+                <td><a id="update_btn" href="{% url 'update_package' entry.id %}">Update</a></td>
+                <td><a id="delete_btn" href="{% url 'delete_package' entry.id %}">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
