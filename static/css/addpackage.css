@@ -70,6 +70,7 @@ form{
 .card input{
     width: 95%;
     padding: 2%;
+    background-color: white;
 }
 
 .card select{
